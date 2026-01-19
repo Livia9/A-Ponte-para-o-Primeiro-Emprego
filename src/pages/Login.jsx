@@ -1,0 +1,170 @@
+
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Mail, Lock, Users, Briefcase, ArrowLeft } from 'lucide-react';
+import logo from '../assets/logo.png';
+import '../styles/Login.css';
+
+function Login({ userType = 'aluno' }) {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [nome, setNome] = useState('');
+  const [nomeEmpresa, setNomeEmpresa] = useState('');
+  const [isLogin, setIsLogin] = useState(true);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (userType === 'aluno') {
+      navigate('/aluno/home');
+    } else {
+      navigate('/empresa/home');
+    }
+  };
+
+  return (
+    <div className="login-container">
+      <button onClick={() => navigate('/')} className="btn-back-home">
+        <ArrowLeft size={20} />
+        Voltar
+      </button>
+
+      <div className="login-box">
+        <div className="logo-section">
+          <img src={logo} alt="Conecta Talento" className="logo-icon-img" />
+          <h1 className="logo-text">
+            <span className="text-blue">Conecta</span>
+            <span className="text-green"> Talento</span>
+          </h1>
+          <p className="subtitle">
+            {userType === 'aluno' ? (
+              <span className="user-type-badge">
+                <Users size={16} />
+                Área do Aluno
+              </span>
+            ) : (
+              <span className="user-type-badge empresa">
+                <Briefcase size={16} />
+                Área da Empresa
+              </span>
+            )}
+          </p>
+        </div>
+
+        <div className="tabs">
+          <button 
+            className={`tab ${isLogin ? 'active' : ''}`}
+            onClick={() => setIsLogin(true)}
+          >
+            Entrar
+          </button>
+          <button 
+            className={`tab ${!isLogin ? 'active' : ''}`}
+            onClick={() => setIsLogin(false)}
+          >
+            Cadastrar
+          </button>
+        </div>
+
+        <form onSubmit={handleSubmit} className="login-form">
+          {!isLogin && userType === 'aluno' && (
+            <div className="form-group">
+              <label>Nome Completo</label>
+              <div className="input-with-icon">
+                <Users size={20} className="input-icon" />
+                <input 
+                  type="text" 
+                  placeholder="Digite seu nome" 
+                  value={nome}
+                  onChange={(e) => setNome(e.target.value)}
+                  required 
+                />
+              </div>
+            </div>
+          )}
+
+          {!isLogin && userType === 'empresa' && (
+            <div className="form-group">
+              <label>Nome da Empresa</label>
+              <div className="input-with-icon">
+                <Briefcase size={20} className="input-icon" />
+                <input 
+                  type="text" 
+                  placeholder="Digite o nome da empresa" 
+                  value={nomeEmpresa}
+                  onChange={(e) => setNomeEmpresa(e.target.value)}
+                  required 
+                />
+              </div>
+            </div>
+          )}
+
+          <div className="form-group">
+            <label>E-mail</label>
+            <div className="input-with-icon">
+              <Mail size={20} className="input-icon" />
+              <input 
+                type="email" 
+                placeholder="seu@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required 
+              />
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label>Senha</label>
+            <div className="input-with-icon">
+              <Lock size={20} className="input-icon" />
+              <input 
+                type="password" 
+                placeholder="••••••••"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+                required 
+              />
+            </div>
+          </div>
+
+          {isLogin && (
+            <div className="forgot-password">
+              <a href="#">Esqueceu sua senha?</a>
+            </div>
+          )}
+
+          <button type="submit" className="btn-primary">
+            {isLogin ? 'Entrar' : 'Criar Conta'}
+          </button>
+
+          <p className="toggle-text">
+            {isLogin ? 'Ainda não tem conta? ' : 'Já tem uma conta? '}
+            <button 
+              type="button" 
+              onClick={() => setIsLogin(!isLogin)}
+              className="toggle-link"
+            >
+              {isLogin ? 'Cadastre-se' : 'Faça login'}
+            </button>
+          </p>
+
+          <div className="switch-user-type">
+            <p>
+              {userType === 'aluno' ? 'É uma empresa? ' : 'É um aluno? '}
+              <button
+                type="button"
+                onClick={() => navigate(userType === 'aluno' ? '/login/empresa' : '/login/aluno')}
+                className="switch-link"
+              >
+                Clique aqui
+              </button>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default Login;
