@@ -12,8 +12,9 @@ function Portfolio() {
     ? studentsData.find(s => s.id === parseInt(id)) || studentsData[0]
     : studentsData[0];
 
-  const handleDownloadCV = () => {
-    alert('Download do currículo iniciado!');
+  function handleDownloadCV(){
+  	const blob = new Blob([JSON.stringify(studentsData[id])], {type: "text/plain;charset=utf-8"});
+		saveAs(blob, studentsData[id-1].name);
   };
 
   return (

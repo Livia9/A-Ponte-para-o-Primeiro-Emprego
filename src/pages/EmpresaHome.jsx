@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { MapPin, Briefcase, Award, Calendar, Mail, Phone, FileText, User } from 'lucide-react';
 import { studentsData } from '../components/data/students';
 import logo from '../assets/logo.png';
-import logofull from '../assets/logofull.jpg';
+import logofull from '../assets/logofull.png';
 import '../styles/EmpresaHome.css';
 
 function EmpresaHome() {
