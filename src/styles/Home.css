@@ -302,9 +302,9 @@
 }
 
 .footer-logo {
-  height: 35px;
+  height: inherit;
   width: auto;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .footer-text {
