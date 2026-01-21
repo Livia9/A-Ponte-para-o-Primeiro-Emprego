@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { BookOpen, Users, Briefcase, Target, Award, TrendingUp, ArrowRight, Leaf, PlayCircle, FileCheck, Video, Building2, Zap, BadgeCheck, CheckCircle2, UserCheck } from 'lucide-react';
-import logofull from '../assets/logofull.jpg';
+import logofull from '../assets/logofull_nullRes.png';
 import '../styles/Home.css';
 import { useState } from 'react';
 
