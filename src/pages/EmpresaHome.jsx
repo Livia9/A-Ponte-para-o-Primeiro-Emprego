@@ -5,6 +5,7 @@ import { studentsData } from '../components/data/students';
 import logo from '../assets/logo.png';
 import logofull from '../assets/logofull.jpg';
 import '../styles/EmpresaHome.css';
+import Header from '../components/Header';
 
 function EmpresaHome() {
   const navigate = useNavigate();
@@ -15,20 +16,11 @@ function EmpresaHome() {
 
   return (
     <div className="empresa-container">
-      <header className="empresa-header">
-        <div className="empresa-header-content">
-          <div className="empresa-logo-section" onClick={() => navigate('/')}>
-            <img src={logo} alt="Conecta Talento" className="empresa-logo-img" />
-            <span className="empresa-logo-text">
-              <span className="text-blue">Conecta</span>
-              <span className="text-green"> Talento</span>
-            </span>
-          </div>
-          
-          <button onClick={() => navigate('/')} className="empresa-btn-logout">Sair</button>
-        </div>
-      </header>
-
+  <Header 
+        userName="Empresa Recrutadora" 
+        userType="empresa"
+        showUserInfo={false}
+      />
       <div className="empresa-hero">
         <div className="empresa-hero-content">
           <img src={logofull} alt="Conecta Talento" className="empresa-hero-logo" />

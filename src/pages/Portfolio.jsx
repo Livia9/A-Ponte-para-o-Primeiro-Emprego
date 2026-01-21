@@ -18,22 +18,11 @@ function Portfolio() {
 
   return (
     <div className="portfolio-container">
-      <header className="header">
-        <div className="header-content">
-          <div className="logo-header" onClick={() => navigate('/aluno/home')}>
-            <img src={logo} alt="Conecta Talento" className="logo-icon-small-img" />
-            <span className="logo-text-header">
-              <span className="text-blue">Conecta</span>
-              <span className="text-green"> Talento</span>
-            </span>
-          </div>
-          
-          <button onClick={() => navigate('/aluno/home')} className="btn-back-header">
-            <ArrowLeft size={18} />
-            Voltar ao Dashboard
-          </button>
-        </div>
-      </header>
+         <Header 
+        userName={student.name} 
+        userEmail={student.email}
+        userType="aluno"
+      />
 
       <main className="portfolio-main">
         <div className="portfolio-hero">
