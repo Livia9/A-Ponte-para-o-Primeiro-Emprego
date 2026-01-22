@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { MapPin, Briefcase, Award, Calendar, Mail, Phone, FileText, User } from 'lucide-react';
 import { studentsData } from '../components/data/students';
 import logo from '../assets/logo.png';
-import logofull from '../assets/logofull.png';
+import logofull from '../assets/logofull_nullRes.png';
 import '../styles/EmpresaHome.css';
 
 function EmpresaHome() {
@@ -31,7 +31,6 @@ function EmpresaHome() {
 
       <div className="empresa-hero">
         <div className="empresa-hero-content">
-          <img src={logofull} alt="Conecta Talento" className="empresa-hero-logo" />
           <h1 className="empresa-hero-title">Bem-vindo à Área de Recrutamento</h1>
           <p className="empresa-hero-subtitle">
             Encontre talentos com habilidades verificadas e portfólios práticos
