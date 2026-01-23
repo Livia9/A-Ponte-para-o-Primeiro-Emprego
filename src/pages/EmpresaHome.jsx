@@ -74,7 +74,7 @@ function EmpresaHome() {
                 <div className="empresa-talent-top">
                   <div className="empresa-talent-photo-wrapper">
                     {student.photo ? (
-                      <img src={student.photo} alt={student.name} className="empresa-talent-photo" />
+                      <img src={"/src/assets/students/default.png"} alt={student.name} className="empresa-talent-photo" />
                     ) : (
                       <div className="empresa-talent-avatar">
                         {student.name.split(' ').map(n => n[0]).join('')}
