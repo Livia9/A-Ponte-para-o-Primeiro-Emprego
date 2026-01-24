@@ -64,7 +64,7 @@
 
 /* Hero Section */
 .empresa-hero {
-  background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+  background: linear-gradient(135deg, #3B82F6 20%, #10B981 100%);
   padding: 60px 24px;
   text-align: center;
 }

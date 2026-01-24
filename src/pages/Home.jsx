@@ -42,12 +42,7 @@ function Home() {
       available: false
     }
   ];
-const stats = [
-  { icon: BadgeCheck, value: "100%", label: "Cursos Práticos" },
-  { icon: Zap, value: "Zero", label: "Teoria Entediante" },
-  { icon: Users, value: "5k+", label: "Jovens Certificados" },
-  { icon: Building2, value: "200+", label: "Empresas Parceiras" }
-];
+
   return (
     <div className="home-container">
       <header className="home-header">
@@ -139,28 +134,7 @@ const stats = [
           </div>
         </div>
       </section>
-
-      <section className="stats-section">
-        <div className="stats-grid-home">
-          <div className="stat-home">
-            <div className="stat-number-home blue">6+</div>
-            <div className="stat-label-home">Cursos Disponíveis</div>
-          </div>
-          <div className="stat-home">
-            <div className="stat-number-home green">100%</div>
-            <div className="stat-label-home">Prático</div>
-          </div>
-          <div className="stat-home">
-            <div className="stat-number-home blue">0</div>
-            <div className="stat-label-home">Custo</div>
-          </div>
-          <div className="stat-home">
-            <div className="stat-number-home green">ODS 4</div>
-            <div className="stat-label-home">Alinhado</div>
-          </div>
-        </div>
-      </section>
-
+      
         <section className="verification">
         <div className="container">
           <div className="verification-content">
@@ -196,144 +170,64 @@ const stats = [
           </button>
         </div>
       </section>
-       <section id="talentos" className="talent-bank">
+
+      <section className="testimonials">
         <div className="container">
-          <div className="talent-header">
-            <h2>Banco de Talentos Verificados</h2>
-            <p>Conecte-se diretamente com jovens preparados e conscientes</p>
-            
-            <div className="tabs">
-              <button
-                onClick={() => setActiveTab('jovens')}
-                className={`tab ${activeTab === 'jovens' ? 'active' : ''}`}
-              >
-                <Users size={20} />
-                Para Jovens
-              </button>
-              <button
-                onClick={() => setActiveTab('empresas')}
-                className={`tab ${activeTab === 'empresas' ? 'active' : ''}`}
-              >
-                <Briefcase size={20} />
-                Para Empresas
-              </button>
+          <h2 className="section-title">Histórias de Sucesso</h2>
+          <p className="section-subtitle">Jovens que transformaram aprendizado em oportunidades</p>
+          
+          <div className="testimonials-grid">
+            <div className="testimonial-card testimonial-blue">
+              <div className="testimonial-author">
+                <div className="author-avatar">M</div>
+                <div>
+                  <div className="author-name">Maria Silva</div>
+                  <div className="author-role">Contratada como Designer Jr.</div>
+                </div>
+              </div>
+              <p className="testimonial-text">
+                "O desafio de criar uma campanha ambiental me ensinou mais sobre comunicação do que qualquer aula teórica. Mostrei meu portfólio na entrevista e fui contratada!"
+              </p>
+              <div className="testimonial-badge">
+                <CheckCircle2 size={16} />
+                Empregada em 2 semanas
+              </div>
+            </div>
+
+            <div className="testimonial-card testimonial-green">
+              <div className="testimonial-author">
+                <div className="author-avatar author-green">J</div>
+                <div>
+                  <div className="author-name">João Santos</div>
+                  <div className="author-role">Dev em startup sustentável</div>
+                </div>
+              </div>
+              <p className="testimonial-text">
+                "Aprendi a trabalhar em equipe desenvolvendo um sistema de coleta seletiva. A empresa adorou ver que eu entendo de ESG além de programação."
+              </p>
+              <div className="testimonial-badge">
+                <CheckCircle2 size={16} />
+                Primeiro emprego tech
+              </div>
+            </div>
+
+            <div className="testimonial-card testimonial-green">
+              <div className="testimonial-author">
+                <div className="author-avatar author-purple">A</div>
+                <div>
+                  <div className="author-name">Ana Costa</div>
+                  <div className="author-role">Analista ESG Jr.</div>
+                </div>
+              </div>
+              <p className="testimonial-text">
+                "Os vídeos-desafios me prepararam para as entrevistas. Chegava confiante sabendo que tinha projetos reais para mostrar. Fez toda a diferença!"
+              </p>
+              <div className="testimonial-badge">
+                <CheckCircle2 size={16} />
+                Salário acima da média
+              </div>
             </div>
           </div>
-
-          {activeTab === 'jovens' ? (
-            <div className="talent-jovens">
-              <div className="jovens-content">
-                <div className="jovens-text">
-                  <h3>Seu Portfólio Abre Portas</h3>
-                  <div className="benefits">
-                    <div className="benefit">
-                      <div className="benefit-icon benefit-blue">
-                        <CheckCircle2 size={20} />
-                      </div>
-                      <div>
-                        <h4>Visibilidade Automática</h4>
-                        <p>Ao concluir desafios, seu perfil fica disponível para recrutadores</p>
-                      </div>
-                    </div>
-                    <div className="benefit">
-                      <div className="benefit-icon benefit-green">
-                        <CheckCircle2 size={20} />
-                      </div>
-                      <div>
-                        <h4>Conexão Direta</h4>
-                        <p>Empresas podem ver seus projetos e entrar em contato</p>
-                      </div>
-                    </div>
-                    <div className="benefit">
-                      <div className="benefit-icon benefit-purple">
-                        <CheckCircle2 size={20} />
-                      </div>
-                      <div>
-                        <h4>Diferencial ESG</h4>
-                        <p>Destaque-se mostrando consciência ambiental e social</p>
-                      </div>
-                    </div>
-                  </div>
-                  <button className="btn-portfolio">Criar Meu Portfólio</button>
-                </div>
-                <div className="profile-preview">
-                  <div className="profile-header">
-                    <h4>Seu Perfil</h4>
-                    <span className="verified-badge">
-                      <UserCheck size={16} />
-                      Verificado
-                    </span>
-                  </div>
-                  <div className="profile-progress">
-                    <div className="progress-label">Desafios Concluídos</div>
-                    <div className="progress-bar-container">
-                      <div className="progress-bar" style={{width: '75%'}}></div>
-                    </div>
-                    <span className="progress-value">9/12</span>
-                  </div>
-                  <div className="profile-skills">
-                    <div className="skills-label">Soft Skills Verificadas</div>
-                    <div className="skills-tags">
-                      <span className="skill-tag skill-blue">Comunicação</span>
-                      <span className="skill-tag skill-green">Trabalho em Equipe</span>
-                      <span className="skill-tag skill-purple">ESG</span>
-                    </div>
-                  </div>
-                  <div className="profile-highlight">
-                    <div className="highlight-label">Destaque</div>
-                    <div className="highlight-box">
-                      🏆 Campanha de reciclagem com 92% de engajamento
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="talent-empresas">
-              <div className="empresas-header">
-                <h3>Acesse Talentos Diferenciados</h3>
-                <p>Encontre jovens com soft skills comprovadas e consciência ESG, prontos para contribuir com sua empresa</p>
-              </div>
-
-              <div className="profiles-grid">
-                {studentProfiles.map((profile, idx) => (
-                  <div key={idx} className="student-card">
-                    <div className="student-header">
-                      <div>
-                        <h4>{profile.name}</h4>
-                        <p>{profile.role}</p>
-                      </div>
-                      {profile.available && (
-                        <span className="available-badge">Disponível</span>
-                      )}
-                    </div>
-                    
-                    <div className="student-skills">
-                      {profile.skills.map((skill, i) => (
-                        <span key={i} className="student-skill">{skill}</span>
-                      ))}
-                    </div>
-                    
-                    <div className="student-highlight">
-                      <strong>✨ Destaque:</strong> {profile.highlight}
-                    </div>
-                    
-                    <div className="student-challenges">
-                      {profile.completedChallenges} desafios verificados
-                    </div>
-                    
-                    <button className="btn-view-profile">Ver Portfólio Completo</button>
-                  </div>
-                ))}
-              </div>
-
-              <div className="empresas-cta">
-                <h4>Pronto para encontrar talentos?</h4>
-                <p>Crie uma conta empresarial e tenha acesso ao banco completo de talentos verificados</p>
-                <button className="btn-empresas">Cadastrar Minha Empresa</button>
-              </div>
-            </div>
-          )}
         </div>
       </section>
 

@@ -23,7 +23,6 @@ function EmpresaHome() {
       />
       <div className="empresa-hero">
         <div className="empresa-hero-content">
-          <img src={logofull} alt="Conecta Talento" className="empresa-hero-logo" />
           <h1 className="empresa-hero-title">Bem-vindo à Área de Recrutamento</h1>
           <p className="empresa-hero-subtitle">
             Encontre talentos com habilidades verificadas e portfólios práticos
