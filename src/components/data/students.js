@@ -7,7 +7,7 @@ export const studentsData = [
     email: "ana.silva@email.com",
     phone: "(11) 98765-4321",
     location: "São Paulo, SP",
-    photo:  '../assets/students/ana-silva.jpg',
+    photo:  './assets/students/ana-silva.jpg',
     completedCourses: 2,
     inProgressCourses: 1,
     totalSkills: 8,
