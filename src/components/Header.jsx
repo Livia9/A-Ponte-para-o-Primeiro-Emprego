@@ -4,7 +4,7 @@ import { User, LogOut } from 'lucide-react';
 import logo from '../assets/logo.png';
 import './Header.css';
 
-function Header({ userName, userEmail, userType = 'aluno', showUserInfo = true }) {
+function Header({ userName, userEmail, userType, showUserInfo = true }) {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
