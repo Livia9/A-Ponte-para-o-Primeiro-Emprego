@@ -73,12 +73,12 @@ function Home() {
             e construa um portfólio verificado para o seu primeiro emprego
           </p>
           <div className="hero-buttons">
-            <button onClick={() => navigate('/login/aluno')} className="btn-hero-primary">
+            <button onClick={() => navigate('/login/aluno')} className="btn-hero primary">
               <Users size={20} />
               Sou Aluno
               <ArrowRight size={20} />
             </button>
-            <button onClick={() => navigate('/login/empresa')} className="btn-hero-secondary">
+            <button onClick={() => navigate('/login/empresa')} className="btn-hero secondary">
               <Briefcase size={20} />
               Sou Empresa
               <ArrowRight size={20} />

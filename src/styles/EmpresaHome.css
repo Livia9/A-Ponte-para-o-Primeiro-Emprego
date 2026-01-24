@@ -47,10 +47,10 @@
 }
 
 .empresa-btn-logout {
-  padding: 8px 20px;
+  padding: 0.5em 20px;
   background: white;
   border: 2px solid #E5E7EB;
-  border-radius: 8px;
+  border-radius: .5em;
   color: #6B7280;
   font-weight: 500;
   cursor: pointer;
@@ -75,8 +75,7 @@
 }
 
 .empresa-hero-logo {
-  height: 200px;
-  width: auto;
+  width: 80vw;
   border-radius: 20px;
 }
 
@@ -473,8 +472,8 @@
 }
 
 .empresa-footer-logo {
-  height: 40px;
-  width: auto;
+  height: inherit;
+  box-sizing: border-box;
   margin-bottom: 12px;
 }
 
@@ -527,7 +526,22 @@
   }
 
   .empresa-talent-stats-row {
-    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .empresa-stat-box{
+  	display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .empresa-stat-box *{
+  	display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .empresa-talent-actions {

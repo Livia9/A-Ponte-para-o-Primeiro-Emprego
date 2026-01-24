@@ -1,23 +1,82 @@
-
+import { studentsData } from '../components/data/students';
+import { useUser } from '../context/UserProvider';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mail, Lock, Users, Briefcase, ArrowLeft } from 'lucide-react';
+import { Mail, Lock, Users, Briefcase, ArrowLeft, Calendar, Phone } from 'lucide-react';
 import logo from '../assets/logo.png';
 import '../styles/Login.css';
+
+class Student {
+  constructor(data) {
+    this.id = studentsData.length;
+    this.name = data.name || '';
+    this.age = data.age || null;
+    this.email = data.email || '';
+    this.phone = data.phone || '';
+    this.location = data.location || '';
+    this.photo = data.photo || '../assets/students/default.jpg';
+    
+    this.education = data.education || '';
+    this.availability = data.availability || 'A definir';
+    this.bio = data.bio || '';
+    
+    this.completedCourses = data.completedCourses || 0;
+    this.inProgressCourses = data.inProgressCourses || 0;
+    this.totalSkills = data.totalSkills || 0;
+    this.skills = data.skills || [];
+    this.portfolio = data.portfolio || [];
+    this.certificates = data.certificates || [];
+  }
+}
 
 function Login({ userType = 'aluno' }) {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [nome, setNome] = useState('');
+  const [age, setAge] = useState('');
+  const [location, setLocation] = useState('');
+  const [phone, setPhone] = useState('');
+  const [bio, setBio] = useState('');
+  const [availability, setAvailability] = useState('');
   const [nomeEmpresa, setNomeEmpresa] = useState('');
   const [isLogin, setIsLogin] = useState(true);
-
-  const handleSubmit = (e) => {
+  const { login } = useUser();
+  
+  
+  function handleSubmit(e){
     e.preventDefault();
-    
     if (userType === 'aluno') {
-      navigate('/aluno/home');
+      if (!isLogin) {
+        // Cadastro de novo aluno
+        const newAluno = new Student({
+          name: nome,
+          senha: senha,
+          age: age,
+          phone: phone,
+          location: location,
+          availability: availability,
+          email: email
+        });
+        
+        studentsData.push(newAluno);
+        
+        // Login automático após cadastro
+        login(newAluno, 'aluno');
+        navigate('/aluno/home');
+      } else {
+        // Login de aluno existente
+        const alunoEncontrado = studentsData.find(
+          aluno => aluno.email === email
+        );
+        
+        if (alunoEncontrado) {
+          login(alunoEncontrado, 'aluno');
+          navigate('/aluno/home');
+        } else {
+          alert('Usuário não encontrado!');
+        }
+      }
     } else {
       navigate('/empresa/home');
     }
@@ -81,6 +140,16 @@ function Login({ userType = 'aluno' }) {
                   required 
                 />
               </div>
+              <label>data de nascimento</label>
+              <div className = "input-with-icon">
+              	<Calendar size = {20} className="input-icon"/>
+              	<input type = "date" placeholder= "digite sua data de nascimento" className = "input-age"/>
+              </div>
+              <label>numero para contato</label>
+              <div className = "input-with-icon">
+              	<Phone size = {20} className="input-icon"/>
+              	<input type = "number" placeholder= "digite seu número de celular" className = "input-contact"/>
+              </div>
             </div>
           )}
 
@@ -92,6 +161,17 @@ function Login({ userType = 'aluno' }) {
                 <input 
                   type="text" 
                   placeholder="Digite o nome da empresa" 
+                  value={nomeEmpresa}
+                  onChange={(e) => setNomeEmpresa(e.target.value)}
+                  required 
+                />
+              </div>
+              <label>segmento</label>
+              <div className="input-with-icon">
+                <Briefcase size={20} className="input-icon" />
+                <input 
+                  type="text" 
+                  placeholder="declare seu seguimento" 
                   value={nomeEmpresa}
                   onChange={(e) => setNomeEmpresa(e.target.value)}
                   required 
@@ -120,7 +200,7 @@ function Login({ userType = 'aluno' }) {
               <Lock size={20} className="input-icon" />
               <input 
                 type="password" 
-                placeholder="••••••••"
+                placeholder="sua senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
                 required 
