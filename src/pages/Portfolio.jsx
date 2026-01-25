@@ -3,10 +3,15 @@ import { ArrowLeft, Mail, Phone, MapPin, Award, Briefcase, Calendar, FileText, D
 import logo from '../assets/logo.png';
 import '../styles/Portfolio.css';
 import { studentsData } from '../components/data/students';
+import { useEffect } from 'react';
 
 function Portfolio() {
   const navigate = useNavigate();
   const { id } = useParams();
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [id]);
   
   const student = id 
     ? studentsData.find(s => s.id === parseInt(id)) || studentsData[0]
@@ -19,12 +24,18 @@ function Portfolio() {
 
   return (
     <div className="portfolio-container">
-         <Header 
-        userName={student.name} 
-        userEmail={student.email}
-        userType="aluno"
-      />
-
+  <header className="header">
+          <div className="header-content">
+            <div className="logo-header">
+               <img src={logo} className="logo-icon-small" alt="Logo Conecta Talento"/>
+              <span className="logo-text-header">
+                <span className="text-blue">Conecta</span>
+                <span className="text-green"> Talento</span>
+              </span>
+            </div>
+              <button onClick={handleBack} className="btn-logout"> ← Voltar</button>
+          </div>
+        </header>
       <main className="portfolio-main">
         <div className="portfolio-hero">
           <div className="profile-card">

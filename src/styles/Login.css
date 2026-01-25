@@ -125,7 +125,6 @@ body {
 
 .tab.active {
   color: #3B82F6;
-  border-bottom-color: #3B82F6;
 }
 
 .tab:hover {

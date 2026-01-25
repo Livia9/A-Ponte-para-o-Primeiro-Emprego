@@ -1,11 +1,9 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Briefcase, Award, Calendar, Mail, Phone, FileText, User } from 'lucide-react';
 import { studentsData } from '../components/data/students';
 import logo from '../assets/logo.png';
 import logofull from '../assets/logofull_nullRes.png';
 import '../styles/EmpresaHome.css';
-import Header from '../components/Header';
 import { useUser } from '../context/UserProvider';
 
 function EmpresaHome() {
@@ -35,14 +33,7 @@ function EmpresaHome() {
                 <span className="text-green"> Talento</span>
               </span>
             </div>
-            
-            <div className="user-section">
-              <div className="user-info">
-                <p className="user-name">{userData.name}</p>
-                <p className="user-email">{userData.email}</p>
-              </div>
               <button onClick={handleLogout} className="btn-logout">Sair</button>
-            </div>
           </div>
         </header>
 

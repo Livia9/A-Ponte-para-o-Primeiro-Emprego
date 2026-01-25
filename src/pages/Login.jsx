@@ -40,6 +40,7 @@ function Login({ userType = 'aluno' }) {
   const [bio, setBio] = useState('');
   const [availability, setAvailability] = useState('');
   const [nomeEmpresa, setNomeEmpresa] = useState('');
+  const [segmentoEmpresa, setSegmentoEmpresa] = useState('');
   const [isLogin, setIsLogin] = useState(true);
   const { login } = useUser();
   
@@ -140,15 +141,15 @@ function Login({ userType = 'aluno' }) {
                   required 
                 />
               </div>
-              <label>data de nascimento</label>
+              <label>Data de nascimento</label>
               <div className = "input-with-icon">
               	<Calendar size = {20} className="input-icon"/>
               	<input type = "date" placeholder= "digite sua data de nascimento" className = "input-age"/>
               </div>
-              <label>numero para contato</label>
+              <label>Número para contato</label>
               <div className = "input-with-icon">
               	<Phone size = {20} className="input-icon"/>
-              	<input type = "number" placeholder= "digite seu número de celular" className = "input-contact"/>
+              	<input type = "number" placeholder= "Digite seu número de celular" className = "input-contact"/>
               </div>
             </div>
           )}
@@ -166,14 +167,14 @@ function Login({ userType = 'aluno' }) {
                   required 
                 />
               </div>
-              <label>segmento</label>
+              <label>Segmento</label>
               <div className="input-with-icon">
                 <Briefcase size={20} className="input-icon" />
                 <input 
                   type="text" 
-                  placeholder="declare seu seguimento" 
-                  value={nomeEmpresa}
-                  onChange={(e) => setNomeEmpresa(e.target.value)}
+                  placeholder="Declare seu seguimento" 
+                  value={segmentoEmpresa}
+                  onChange={(e) => setSegmentoEmpresa(e.target.value)}
                   required 
                 />
               </div>
@@ -186,7 +187,7 @@ function Login({ userType = 'aluno' }) {
               <Mail size={20} className="input-icon" />
               <input 
                 type="email" 
-                placeholder="seu@email.com"
+                placeholder="Digite seu email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required 
@@ -200,7 +201,7 @@ function Login({ userType = 'aluno' }) {
               <Lock size={20} className="input-icon" />
               <input 
                 type="password" 
-                placeholder="sua senha"
+                placeholder="Digite sua senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
                 required 

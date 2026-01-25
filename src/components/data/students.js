@@ -4,12 +4,13 @@ export const studentsData = [
     id: 1,
     name: "Ana Silva",
     age: 22,
-    email: "ana.silva@email.com",
+    email: "ana.silva@gmail.com",
     phone: "(11) 98765-4321",
     location: "São Paulo, SP",
     photo:  '/students/ana-silva.jpg',
     completedCourses: 2,
     inProgressCourses: 1,
+    portfolioProjects: 2,
     totalSkills: 8,
     skills: [
       "Comunicação",
@@ -71,6 +72,7 @@ export const studentsData = [
     photo: '/students/carlos.jpg',
     completedCourses: 3,
     inProgressCourses: 0,
+    portfolioProjects: 1,
     totalSkills: 10,
     skills: [
       "Inteligência emocional",
@@ -140,6 +142,7 @@ export const studentsData = [
     photo: '/students/bia.jpg',
     completedCourses: 1,
     inProgressCourses: 2,
+    portfolioProjects: 1,
     totalSkills: 6,
     skills: [
       "Gestão de tempo",
@@ -243,6 +246,7 @@ export const studentsData = [
     photo: '/students/fernanda.jpg',
     completedCourses: 1,
     inProgressCourses: 1,
+    portfolioProjects: 1,
     totalSkills: 5,
     skills: [
       "Comunicação",
