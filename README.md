@@ -134,12 +134,12 @@
 ```
 conecta-talento/
 ├── public/
-│   └── students/           # Fotos dos estudantes
+│   └── students/           # Fotos de perfil dos estudantes
 ├── src/
 │   ├── assets/
 │   │   ├── logo.png       # Logo pequeno
 │   │   ├── logofull.png   # Logo completo
-│   │   └── students/      # Imagens de perfil
+│   │
 │   ├── components/
 │   │   └── data/
 │   │       ├── students.js    # Dados dos estudantes
