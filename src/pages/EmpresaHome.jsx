@@ -19,7 +19,7 @@ function EmpresaHome() {
     navigate(`/aluno/portfolio/${studentId}`);
   };
 
-    const userData = currentUser || studentsData[2]; // Fallback para desenvolvimento
+    const userData = currentUser || studentsData[2];
   
 
   return (
@@ -83,7 +83,7 @@ function EmpresaHome() {
                   <div className="empresa-talent-photo-wrapper">
                     {student.photo ? (
                       <img src={student.photo} alt={student.name} className="empresa-talent-photo"
-                      onError={(e) => { e.target.src = "/students/default.png" }} // Fallback se a imagem falhar
+                      onError={(e) => { e.target.src = "/students/default.png" }}
                        />
                     ) : (
                       <div className="empresa-talent-avatar">

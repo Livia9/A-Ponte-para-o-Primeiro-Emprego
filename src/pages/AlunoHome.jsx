@@ -23,7 +23,7 @@ function AlunoHome() {
   const availableCourses = coursesData.filter(c => c.status === 'nao_iniciado');
   const completedCourses = coursesData.filter(c => c.status === 'concluido');
   
-  const userData = currentUser || studentsData[0]; // Fallback para desenvolvimento
+  const userData = currentUser || studentsData[0];
   
   return (
     <div className="aluno-container">

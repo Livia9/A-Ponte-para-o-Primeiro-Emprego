@@ -17,7 +17,6 @@ function App() {
 	        <Route path="/login/aluno" element={<Login userType="aluno" />} />
 	        <Route path="/login/empresa" element={<Login userType="empresa" />} />
 	        <Route path="/aluno/home" element={<AlunoHome />} />
-	        <Route path="/aluno/portfolio" element={<Portfolio />} />
 	        <Route path="/aluno/portfolio/:id" element={<Portfolio />} />
 	        <Route path="/aluno/curso/:id" element={<CourseDetails />} />
 	        <Route path="/empresa/home" element={<EmpresaHome />} />

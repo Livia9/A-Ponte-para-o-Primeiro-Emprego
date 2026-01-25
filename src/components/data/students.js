@@ -1,4 +1,3 @@
-// add foto dos alunos
 export const studentsData = [
   {
     id: 1,

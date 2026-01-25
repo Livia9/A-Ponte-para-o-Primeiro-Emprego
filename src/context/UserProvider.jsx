@@ -1,12 +1,11 @@
-// context/UserContext.jsx
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 
 const UserContext = createContext();
 
 export function UserProvider({ children }){
   const [currentUser, setCurrentUser] = useState(null);
-  const [userType, setUserType] = useState(null); // 'aluno' ou 'empresa'
-  // Carrega dados do localStorage ao iniciar (armazenamento local)
+  const [userType, setUserType] = useState(null); 
+
   useEffect(() => {
     const storedUser = localStorage.getItem('currentUser');
     const storedType = localStorage.getItem('userType');
