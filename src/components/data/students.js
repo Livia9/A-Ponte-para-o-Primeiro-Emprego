@@ -1,15 +1,15 @@
-// add foto dos alunos
 export const studentsData = [
   {
     id: 1,
     name: "Ana Silva",
     age: 22,
-    email: "ana.silva@email.com",
+    email: "ana.silva@gmail.com",
     phone: "(11) 98765-4321",
     location: "São Paulo, SP",
-    photo:  '../assets/students/ana-silva.jpg',
+    photo:  '/students/ana-silva.jpg',
     completedCourses: 2,
     inProgressCourses: 1,
+    portfolioProjects: 2,
     totalSkills: 8,
     skills: [
       "Comunicação",
@@ -68,9 +68,10 @@ export const studentsData = [
     email: "carlos.mendes@email.com",
     phone: "(21) 97654-3210",
     location: "Rio de Janeiro, RJ",
-    photo: "/images/students/carlos-mendes.jpg",
+    photo: '/students/carlos.jpg',
     completedCourses: 3,
     inProgressCourses: 0,
+    portfolioProjects: 1,
     totalSkills: 10,
     skills: [
       "Inteligência emocional",
@@ -137,9 +138,10 @@ export const studentsData = [
     email: "beatriz.santos@email.com",
     phone: "(11) 96543-2109",
     location: "São Paulo, SP",
-    photo: "/images/students/beatriz-santos.jpg", 
+    photo: '/students/bia.jpg',
     completedCourses: 1,
     inProgressCourses: 2,
+    portfolioProjects: 1,
     totalSkills: 6,
     skills: [
       "Gestão de tempo",
@@ -180,7 +182,7 @@ export const studentsData = [
     email: "diego.costa@email.com",
     phone: "(85) 95432-1098",
     location: "Fortaleza, CE",
-    photo: "/images/students/diego-costa.jpg",
+    photo: '/students/diego.jpg',
     completedCourses: 2,
     inProgressCourses: 1,
     totalSkills: 7,
@@ -240,9 +242,10 @@ export const studentsData = [
     email: "fernanda.lima@email.com",
     phone: "(31) 94321-0987",
     location: "Belo Horizonte, MG",
-    photo: "/images/students/fernanda-lima.jpg", // ← Adicione sua foto aqui
+    photo: '/students/fernanda.jpg',
     completedCourses: 1,
     inProgressCourses: 1,
+    portfolioProjects: 1,
     totalSkills: 5,
     skills: [
       "Comunicação",

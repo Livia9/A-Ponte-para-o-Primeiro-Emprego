@@ -2,12 +2,17 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import '../styles/CourseDetails.css';
 import { coursesData } from '../components/data/courses';
+import logo from '../assets/logo.png'
+import { useEffect } from 'react';
 
 function CourseDetails() {
   const navigate = useNavigate();
   const { id } = useParams();
   const course = coursesData.find(c => c.id === parseInt(id));
-
+   useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [id]);
+    
   if (!course) {
     return (
       <div className="course-details-container">
@@ -35,7 +40,7 @@ function CourseDetails() {
       <header className="header">
         <div className="header-content">
           <div className="logo-header">
-            <div className="logo-icon-small">CT</div>
+            <img src={logo} className="logo-icon-small" alt="Logo Conecta Talento"/>
             <span className="logo-text-header">
               <span className="text-blue">Conecta</span>
               <span className="text-green"> Talento</span>

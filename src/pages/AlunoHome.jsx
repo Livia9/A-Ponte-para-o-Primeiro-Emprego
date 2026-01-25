@@ -1,13 +1,17 @@
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../context/UserProvider';
 import { coursesData } from '../components/data/courses';
 import '../styles/AlunoHome.css';
+import { studentsData } from '../components/data/students';
 import logo from '../assets/logo.png'
 
 
 function AlunoHome() {
   const navigate = useNavigate();
+  const { currentUser, logout } = useUser();
 
   const handleLogout = () => {
+  	logout();
     navigate('/');
   };
 
@@ -18,16 +22,9 @@ function AlunoHome() {
   const inProgressCourses = coursesData.filter(c => c.status === 'em_andamento');
   const availableCourses = coursesData.filter(c => c.status === 'nao_iniciado');
   const completedCourses = coursesData.filter(c => c.status === 'concluido');
-
-  const userData = {
-    name: "Ana Silva",
-    email: "ana.silva@email.com",
-    completedCourses: completedCourses.length,
-    inProgressCourses: inProgressCourses.length,
-    totalSkills: 8,
-    portfolioProjects: 2
-  };
-
+  
+  const userData = currentUser || studentsData[0];
+  
   return (
     <div className="aluno-container">
       <header className="header">
@@ -52,7 +49,7 @@ function AlunoHome() {
 
       <main className="main-content">
         <div className="welcome-section">
-          <h1 className="welcome-title">Olá, Ana! 👋</h1>
+          <h1 className="welcome-title">Olá, {userData.name} 👋</h1>
           <p className="welcome-subtitle">Continue sua jornada de desenvolvimento profissional</p>
         </div>
 

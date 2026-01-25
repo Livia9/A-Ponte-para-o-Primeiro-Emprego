@@ -1,37 +1,44 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Briefcase, Award, Calendar, Mail, Phone, FileText, User } from 'lucide-react';
 import { studentsData } from '../components/data/students';
 import logo from '../assets/logo.png';
-import logofull from '../assets/logofull.jpg';
+import logofull from '../assets/logofull_nullRes.png';
 import '../styles/EmpresaHome.css';
+import { useUser } from '../context/UserProvider';
 
 function EmpresaHome() {
   const navigate = useNavigate();
+  const { currentUser, logout } = useUser();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   const handleViewPortfolio = (studentId) => {
     navigate(`/aluno/portfolio/${studentId}`);
   };
 
+    const userData = currentUser || studentsData[2];
+  
+
   return (
     <div className="empresa-container">
-      <header className="empresa-header">
-        <div className="empresa-header-content">
-          <div className="empresa-logo-section" onClick={() => navigate('/')}>
-            <img src={logo} alt="Conecta Talento" className="empresa-logo-img" />
-            <span className="empresa-logo-text">
-              <span className="text-blue">Conecta</span>
-              <span className="text-green"> Talento</span>
-            </span>
+  <header className="header">
+          <div className="header-content">
+            <div className="logo-header">
+               <img src={logo} className="logo-icon-small" alt="Logo Conecta Talento"/>
+              <span className="logo-text-header">
+                <span className="text-blue">Conecta</span>
+                <span className="text-green"> Talento</span>
+              </span>
+            </div>
+              <button onClick={handleLogout} className="btn-logout">Sair</button>
           </div>
-          
-          <button onClick={() => navigate('/')} className="empresa-btn-logout">Sair</button>
-        </div>
-      </header>
+        </header>
 
       <div className="empresa-hero">
         <div className="empresa-hero-content">
-          <img src={logofull} alt="Conecta Talento" className="empresa-hero-logo" />
           <h1 className="empresa-hero-title">Bem-vindo à Área de Recrutamento</h1>
           <p className="empresa-hero-subtitle">
             Encontre talentos com habilidades verificadas e portfólios práticos
@@ -75,14 +82,15 @@ function EmpresaHome() {
                 <div className="empresa-talent-top">
                   <div className="empresa-talent-photo-wrapper">
                     {student.photo ? (
-                      <img src={student.photo} alt={student.name} className="empresa-talent-photo" />
+                      <img src={student.photo} alt={student.name} className="empresa-talent-photo"
+                      onError={(e) => { e.target.src = "/students/default.png" }}
+                       />
                     ) : (
                       <div className="empresa-talent-avatar">
                         {student.name.split(' ').map(n => n[0]).join('')}
                       </div>
                     )}
-                  </div>
-                  
+                  </div>          
                   <div className="empresa-talent-info">
                     <h3 className="empresa-talent-name">{student.name}</h3>
                     <div className="empresa-talent-meta">

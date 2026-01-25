@@ -1,10 +1,47 @@
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, Users, Briefcase, Target, Award, TrendingUp, ArrowRight } from 'lucide-react';
-import logofull from '../assets/logofull.jpg';
+import { BookOpen, Users, Briefcase, Target, Award, TrendingUp, ArrowRight, Leaf, PlayCircle, FileCheck, Video, Building2, Zap, BadgeCheck, CheckCircle2, UserCheck } from 'lucide-react';
+import logofull from '../assets/logofull_nullRes.png';
 import '../styles/Home.css';
+import { useState } from 'react';
 
 function Home() {
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('jovens');
+
+  
+  const verificationMethods = [
+    { Icon: Video, title: "Vídeo-desafios", desc: "Grave suas apresentações e demonstrações práticas" },
+    { Icon: FileCheck, title: "Projetos Reais", desc: "Desenvolva planos e estratégias aplicáveis" },
+    { Icon: PlayCircle, title: "Simulações", desc: "Participe de entrevistas e dinâmicas simuladas" },
+    { Icon: Award, title: "Portfolio Verificado", desc: "Construa evidências concretas das suas habilidades" }
+  ];
+
+  const studentProfiles = [
+    {
+      name: "Maria Silva",
+      role: "Aspirante a Designer",
+      skills: ["Comunicação", "Criatividade", "ESG"],
+      completedChallenges: 8,
+      highlight: "Criou campanha de reciclagem com 85% de engajamento",
+      available: true
+    },
+    {
+      name: "João Santos",
+      role: "Futuro Desenvolvedor",
+      skills: ["Trabalho em Equipe", "Resolução de Problemas", "Sustentabilidade"],
+      completedChallenges: 12,
+      highlight: "Desenvolveu sistema de coleta inteligente",
+      available: true
+    },
+    {
+      name: "Ana Costa",
+      role: "Analista em Formação",
+      skills: ["Comunicação", "Liderança", "ESG"],
+      completedChallenges: 10,
+      highlight: "Liderou projeto de redução de desperdício",
+      available: false
+    }
+  ];
 
   return (
     <div className="home-container">
@@ -24,6 +61,10 @@ function Home() {
 
       <section className="hero-section">
         <div className="hero-content">
+            <div className="hero-badge">
+              <Leaf size={16} />
+              ODS 4 - Meta 4.4 | Sustentabilidade + Empregabilidade
+            </div>
           <h1 className="hero-title">
             Desenvolva as habilidades que o mercado procura
           </h1>
@@ -32,12 +73,12 @@ function Home() {
             e construa um portfólio verificado para o seu primeiro emprego
           </p>
           <div className="hero-buttons">
-            <button onClick={() => navigate('/login/aluno')} className="btn-hero-primary">
+            <button onClick={() => navigate('/login/aluno')} className="btn-hero primary">
               <Users size={20} />
               Sou Aluno
               <ArrowRight size={20} />
             </button>
-            <button onClick={() => navigate('/login/empresa')} className="btn-hero-secondary">
+            <button onClick={() => navigate('/login/empresa')} className="btn-hero secondary">
               <Briefcase size={20} />
               Sou Empresa
               <ArrowRight size={20} />
@@ -93,24 +134,26 @@ function Home() {
           </div>
         </div>
       </section>
+      
+        <section className="verification">
+        <div className="container">
+          <div className="verification-content">
+            <div className="verification-header">
+              <h2>Currículo Verificado, Não Certificado</h2>
+              <p>Esqueça PDFs genéricos. Aqui você comprova suas habilidades com evidências concretas que os recrutadores podem ver e validar.</p>
+            </div>
 
-      <section className="stats-section">
-        <div className="stats-grid-home">
-          <div className="stat-home">
-            <div className="stat-number-home blue">6+</div>
-            <div className="stat-label-home">Cursos Disponíveis</div>
-          </div>
-          <div className="stat-home">
-            <div className="stat-number-home green">100%</div>
-            <div className="stat-label-home">Prático</div>
-          </div>
-          <div className="stat-home">
-            <div className="stat-number-home blue">0</div>
-            <div className="stat-label-home">Custo</div>
-          </div>
-          <div className="stat-home">
-            <div className="stat-number-home green">ODS 4</div>
-            <div className="stat-label-home">Alinhado</div>
+            <div className="verification-grid">
+              {verificationMethods.map((method, idx) => (
+                <div key={idx} className="verification-card">
+                  <div className="verification-icon">
+                    <method.Icon size={32} />
+                  </div>
+                  <h3>{method.title}</h3>
+                  <p>{method.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -125,6 +168,66 @@ function Home() {
             Criar Conta Grátis
             <ArrowRight size={20} />
           </button>
+        </div>
+      </section>
+
+      <section className="testimonials">
+        <div className="container">
+          <h2 className="section-title">Histórias de Sucesso</h2>
+          <p className="section-subtitle">Jovens que transformaram aprendizado em oportunidades</p>
+          
+          <div className="testimonials-grid">
+            <div className="testimonial-card testimonial-blue">
+              <div className="testimonial-author">
+                <div className="author-avatar">M</div>
+                <div>
+                  <div className="author-name">Maria Silva</div>
+                  <div className="author-role">Contratada como Designer Jr.</div>
+                </div>
+              </div>
+              <p className="testimonial-text">
+                "O desafio de criar uma campanha ambiental me ensinou mais sobre comunicação do que qualquer aula teórica. Mostrei meu portfólio na entrevista e fui contratada!"
+              </p>
+              <div className="testimonial-badge">
+                <CheckCircle2 size={16} />
+                Empregada em 2 semanas
+              </div>
+            </div>
+
+            <div className="testimonial-card testimonial-green">
+              <div className="testimonial-author">
+                <div className="author-avatar author-green">J</div>
+                <div>
+                  <div className="author-name">João Santos</div>
+                  <div className="author-role">Dev em startup sustentável</div>
+                </div>
+              </div>
+              <p className="testimonial-text">
+                "Aprendi a trabalhar em equipe desenvolvendo um sistema de coleta seletiva. A empresa adorou ver que eu entendo de ESG além de programação."
+              </p>
+              <div className="testimonial-badge">
+                <CheckCircle2 size={16} />
+                Primeiro emprego tech
+              </div>
+            </div>
+
+            <div className="testimonial-card testimonial-green">
+              <div className="testimonial-author">
+                <div className="author-avatar author-purple">A</div>
+                <div>
+                  <div className="author-name">Ana Costa</div>
+                  <div className="author-role">Analista ESG Jr.</div>
+                </div>
+              </div>
+              <p className="testimonial-text">
+                "Os vídeos-desafios me prepararam para as entrevistas. Chegava confiante sabendo que tinha projetos reais para mostrar. Fez toda a diferença!"
+              </p>
+              <div className="testimonial-badge">
+                <CheckCircle2 size={16} />
+                Salário acima da média
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

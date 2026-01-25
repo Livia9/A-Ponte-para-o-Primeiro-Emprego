@@ -405,6 +405,11 @@
 
   .projects-grid,
   .certificates-grid {
-    grid-template-columns: 1fr;
+  	display: flex;
+  	flex-direction: column;
+  	gap: 1em;
+  }
+  .certificate-card{
+  	flex-direction: column;
   }
 }
