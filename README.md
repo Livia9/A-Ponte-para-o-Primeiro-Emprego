@@ -24,8 +24,6 @@
 - [Instalação](#-instalação)
 - [Como Usar](#-como-usar)
 - [Contribuindo](#-contribuindo)
-- [Licença](#-licença)
-- [Contato](#-contato)
 - [Sobre o Desenvolvimento](#-sobre-o-desenvolvimento)
 
 ---
@@ -62,19 +60,19 @@
 ## 🎬 Demonstração
 
 ### Tela Inicial
-![Home](./docs/screenshots/home.png)
+![Home](./public/screenshots/home.png)
 *Apresentação da plataforma com foco em ODS 4 e sustentabilidade*
 
 ### Dashboard do Aluno
-![Dashboard Aluno](./docs/screenshots/aluno-dashboard.png)
+![Dashboard Aluno](./public/screenshots/homeAluno.png)
 *Área do estudante com cursos em andamento, disponíveis e estatísticas de progresso*
 
 ### Portfólio do Estudante
-![Portfólio](./docs/screenshots/portfolio.png)
+![Portfólio](./public//screenshots/portfolio.png)
 *Portfólio verificado com projetos, habilidades e certificados*
 
 ### Área da Empresa
-![Dashboard Empresa](./docs/screenshots/empresa-dashboard.png)
+![Dashboard Empresa](./public/screenshots/homeEmpresa.png)
 *Interface de recrutamento com visualização de talentos disponíveis*
 
 ---
@@ -315,17 +313,6 @@ Contribuições são sempre bem-vindas!
 3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
-
----
-
-
-## 📧 Contato
-
-**Conecta Talento** - A Ponte para o Primeiro Emprego
-
-- Website: [conectatalento.com.br](#)
-- Email: contato@conectatalento.com.br
-- LinkedIn: [@conectatalento](#)
 
 ---
 
