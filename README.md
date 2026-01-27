@@ -366,4 +366,11 @@ Para evolução do projeto além do escopo acadêmico, serão necessárias imple
 
 *Projeto desenvolvido por Equipe Épsilon - Turma Front-End Softex 2025*
 
+Links para os perfis do GitHub dos participantes:
+
+[Livia](https://github.com/Livia9) |
+[Iago](https://github.com/Lonlysoft) |
+[Ana Carolina](https://github.com/anacarol-01-create) |
+[Taianny](https://github.com/taylisboa)
+
 </div>
